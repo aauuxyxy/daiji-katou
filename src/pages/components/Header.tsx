@@ -1,4 +1,5 @@
 import { ChangeThemes } from './ChangeThemes';
+import Image from 'next/image';
 
 export const Header = () => {
   return (
@@ -15,6 +16,18 @@ export const Header = () => {
           </div>
         </div>
       </nav>
+
+      <div className='max-w-screen-xl flex flex-wrap items-center justify-start mx-auto px-4'>
+        <div className='animate-slide-in-fwd-center'>
+          <p className='pb-10 pt-20 text-9xl tracking-widest'>Hello Planet</p>
+          <p className='tracking-widest text-2xl'>
+            Welcome to Daiji Kato's Portfolio Planet Journy!!
+          </p>
+          <p className='tracking-widest text-2xl'>
+            Dark mode is recommended for viewing.
+          </p>
+        </div>
+      </div>
     </>
   );
 };
