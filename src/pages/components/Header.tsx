@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { ChangeThemes } from './ChangeThemes';
+import ChangeThemes from './ChangeThemes';
 import Image from 'next/image';
 
-export const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <>
       <nav>
@@ -75,7 +75,7 @@ export const Header = () => {
           <p className='pt-20 text-9xl tracking-widest'>Hello</p>
           <p className='pb-10 text-9xl tracking-widest'>Planet</p>
           <p className='tracking-widest text-xl'>
-            Welcome to Daiji Kato's Portfolio Planet Journy!!
+            Welcome to Daiji Katos Portfolio Planet Journy!!
           </p>
           <p className='tracking-widest text-xl'>
             Dark mode is recommended for viewing.
@@ -94,3 +94,5 @@ export const Header = () => {
     </>
   );
 };
+
+export default Header;
