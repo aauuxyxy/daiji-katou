@@ -17,7 +17,15 @@ export const Header = () => {
         </div>
       </nav>
 
-      <div className='max-w-screen-xl flex flex-wrap items-center justify-start mx-auto px-4'>
+      <div className='absolute top-40 right-36 z-0'>
+        <Image
+          src='/images/planet/惑星1.png'
+          alt='Picture of the author'
+          width={400}
+          height={400}
+        />
+      </div>
+      <div className='max-w-screen-xl flex flex-wrap items-center justify-start mx-auto px-4 z-10 font-body'>
         <div className='animate-slide-in-fwd-center'>
           <p className='pb-10 pt-20 text-9xl tracking-widest'>Hello Planet</p>
           <p className='tracking-widest text-2xl'>
