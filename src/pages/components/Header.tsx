@@ -6,13 +6,13 @@ const Header = (): JSX.Element => {
   return (
     <>
       <nav>
-        <div className='container mx-auto flex items-center justify-between py-10 lg:px-36 sm:px-1'>
-          <span className='text-3xl font-body tracking-widest'>
+        <div className='py-10 w-3/4 mx-auto relative'>
+          <span className='text-3xl font-body tracking-widest absolute left-0'>
             Daiji Katou
           </span>
 
           <div
-            className='hidden w-auto flex space-x-10 text-lg lg:flex'
+            className='hidden w-auto flex space-x-10 text-lg laptop:flex absolute right-0'
             id='navbar-default'
           >
             <div className='hover:text-blue-500 hover:border-b-2 transition'>
@@ -40,7 +40,7 @@ const Header = (): JSX.Element => {
             </div>
           </div>
 
-          <div className='lg:hidden md:flex'>
+          <div className='laptop:hidden phone:inline-block absolute right-0'>
             <button type='button' className='z-10 space-y-2'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -61,7 +61,7 @@ const Header = (): JSX.Element => {
         </div>
       </nav>
 
-      <div className='absolute sm:-right-60 lg:top-40 lg:right-48 z-0'>
+      <div className='absolute laptop:top-28 desktop:right-48 laptop:-right-20 tablet:-right-56 phone:-right-80 z-0'>
         <Image
           src='/images/planet/惑星1.png'
           alt='Picture of the author'
@@ -70,20 +70,24 @@ const Header = (): JSX.Element => {
         />
       </div>
 
-      <div className='max-w-screen-xl flex flex-wrap items-center justify-start mx-auto px-4 z-10 font-body'>
-        <div className='animate-slide-in-fwd-center'>
-          <p className='pt-20 text-9xl tracking-widest'>Hello</p>
-          <p className='pb-10 text-9xl tracking-widest'>Planet</p>
-          <p className='tracking-widest text-xl'>
+      <div className='z-10 font-body'>
+        <div className='animate-slide-in-fwd-center w-3/4 mx-auto'>
+          <p className='pt-20 laptop:text-9xl tracking-widest phone:text-8xl'>
+            Hello
+          </p>
+          <p className='pb-10 laptop:text-9xl tracking-widest phone:text-8xl'>
+            Planet
+          </p>
+          <p className='tracking-widest laptop:text-xl phone:text-lg'>
             Welcome to Daiji Katos Portfolio Planet Journy!!
           </p>
-          <p className='tracking-widest text-xl'>
+          <p className='tracking-widest laptop:text-xl phone:text-lg'>
             Dark mode is recommended for viewing.
           </p>
         </div>
       </div>
 
-      <div className='absolute w-1/2 lg:top-56 lg:left-96 sm:top-56 sm:left-10'>
+      <div className='absolute desktop:w-1/2 tablet:w-1/3 phone:w-60 desktop:top-48 desktop:left-96 tablet:top-44 tablet:left-72 phone:top-48 phone:left-52'>
         <Image
           src='/images/planet/rocket.png'
           alt='Picture of the author'
