@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { ChangeThemes } from './ChangeThemes';
 import Image from 'next/image';
-import { push as Menu } from 'react-burger-menu';
-import { useState } from 'react';
 
 export const Header = () => {
   return (
