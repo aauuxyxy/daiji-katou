@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import About from './components/About';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 export default function Home(): JSX.Element {
   return (
@@ -12,7 +13,10 @@ export default function Home(): JSX.Element {
         <About />
       </div>
 
-      <Footer />
+      <div id='contact' className='py-10'>
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }
