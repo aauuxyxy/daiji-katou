@@ -27,7 +27,10 @@ const Header = (): JSX.Element => {
               id='navbar-default'
             >
               {links.map(({ href, label }) => (
-                <div className='hover:text-blue-500 hover:border-b-2 transition'>
+                <div
+                  key={href}
+                  className='hover:text-blue-500 hover:border-b-2 transition'
+                >
                   <a href={href}>
                     <span>{label}</span>
                   </a>
@@ -43,7 +46,7 @@ const Header = (): JSX.Element => {
                 <Menu as='div' className='relative inline-block text-left'>
                   <div>
                     <Menu.Button className='inline-flex w-full justify-center bg-opacity-20 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'>
-                      <button type='button' className='z-10 space-y-2'>
+                      <span className='z-10 space-y-2'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           fill='none'
@@ -58,7 +61,7 @@ const Header = (): JSX.Element => {
                             d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
                           />
                         </svg>
-                      </button>
+                      </span>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -96,7 +99,7 @@ const Header = (): JSX.Element => {
           </div>
         </nav>
 
-        <div className='absolute laptop:top-28 desktop:right-48 laptop:-right-20 tablet:-right-56 phone:-right-80 z-0'>
+        <div className='absolute top-28 desktop:right-40 z-0 phone:w-1/3 phone:right-4'>
           <Image
             src='/images/planet/惑星1.png'
             alt='Picture of the author'
@@ -113,10 +116,10 @@ const Header = (): JSX.Element => {
             <p className='pb-10 laptop:text-9xl tracking-widest phone:text-8xl'>
               Planet
             </p>
-            <p className='tracking-widest laptop:text-xl phone:text-lg'>
+            <p className='tracking-widest laptop:text-xl phone:text-sm'>
               Welcome to Daiji Katos Portfolio Planet Journy!!
             </p>
-            <p className='tracking-widest laptop:text-xl phone:text-lg'>
+            <p className='tracking-widest laptop:text-xl phone:text-sm'>
               Dark mode is recommended for viewing.
             </p>
 

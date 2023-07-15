@@ -5,10 +5,10 @@ import Footer from './components/Footer';
 export default function Home(): JSX.Element {
   return (
     <div>
-      <div className='mb-52'>
+      <div className='phone:mb-20 desktop:mb-56'>
         <Header />
       </div>
-      <div id='about'>
+      <div id='about' className=' bg-zinc-900 py-10'>
         <About />
       </div>
 
