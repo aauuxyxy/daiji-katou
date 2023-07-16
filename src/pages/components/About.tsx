@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const About = (): JSX.Element => {
+const About = () => {
   const aboutItem = [
     { label: '所属会社', value: '株式会社KDDIエボルバ' },
     {
@@ -28,13 +28,6 @@ const About = (): JSX.Element => {
             height={100}
             className='avatar'
           />
-          <style jsx global>
-            {`
-              .avatar {
-                border-radius: 50%;
-              }
-            `}
-          </style>
         </div>
 
         <div className='phone:text-sm'>

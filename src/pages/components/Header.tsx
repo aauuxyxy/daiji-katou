@@ -1,11 +1,9 @@
-import Link from 'next/link';
 import ChangeThemes from './ChangeThemes';
 import Image from 'next/image';
 import { Menu, Transition } from '@headlessui/react';
-import { Fragment, useEffect, useRef, useState } from 'react';
-import { link } from 'fs';
+import { Fragment } from 'react';
 
-const Header = (): JSX.Element => {
+const Header = () => {
   const links = [
     { href: '#about', label: 'About' },
     { href: '#documents', label: 'Documents' },

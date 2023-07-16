@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Contact = () => {
   const links = [
     { href: 'https://github.com/aauuxyxy', label: 'GitHub' },
@@ -14,9 +16,9 @@ const Contact = () => {
       <div className='w-3/4 mx-auto'>
         {links.map(({ href, label }) => (
           <p key={href}>
-            <a href={href} target='_blank'>
+            <Link href={href} target='_blank'>
               {label}
-            </a>
+            </Link>
           </p>
         ))}
       </div>

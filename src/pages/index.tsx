@@ -2,9 +2,10 @@ import Header from './components/Header';
 import About from './components/About';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
-import { Documents } from './components/Documents';
+import Documents from './components/Documents';
 import { GetStaticProps } from 'next';
 import Parser from 'rss-parser';
+import { FeedProps } from '../../types/FeedItem';
 
 export default function Home({ zennPosts }: FeedProps) {
   return (

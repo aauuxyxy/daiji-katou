@@ -1,4 +1,10 @@
-export const Documents = ({ zennPosts }: FeedProps) => {
+import { FeedProps } from '../../../types/FeedItem';
+
+const Documents = ({ zennPosts }: FeedProps) => {
+  if (!zennPosts) {
+    return <p>記事がありません。</p>;
+  }
+
   return (
     <>
       <div className='flex items-center justify-center laptop:mb-20 phone:mb-10'>
@@ -18,3 +24,5 @@ export const Documents = ({ zennPosts }: FeedProps) => {
     </>
   );
 };
+
+export default Documents;
