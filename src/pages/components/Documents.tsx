@@ -1,46 +1,20 @@
-import { GetStaticProps } from 'next';
-import { ZennItem } from '../../../types/Zenn/ZennItem';
-
-type BlogZennProps = {
-  articles?: ZennItem[];
-};
-
-const zennFetcher = async <T,>(path: string) => {
-  const res = await fetch(`https://zenn.dev/api/${path}`);
-  const result: T = await res.json();
-  console.log(result);
-  return result;
-};
-
-const Documents = (props: BlogZennProps) => {
-  const { articles } = props;
-
-  if (!articles) {
-    return <p>Zennへの投稿はございません。</p>;
-  }
-
+export const Documents = ({ zennPosts }: FeedProps) => {
   return (
     <>
-      {articles.map((article) => (
-        <p key={article.id}>{article.title}</p>
-      ))}
+      <div className='flex items-center justify-center laptop:mb-20 phone:mb-10'>
+        <p className='text-5xl tracking-widest'>Documents</p>
+      </div>
+
+      <div className='w-3/4 mx-auto'>
+        <div className='mb-10'>
+          <p className='text-2xl tracking-widest'>Qiita</p>
+          <ul>
+            {zennPosts.map((post) => (
+              <p>{post.title}</p>
+            ))}
+          </ul>
+        </div>
+      </div>
     </>
   );
-};
-
-export default Documents;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const result = await zennFetcher<{ articles: ZennItem[] }>(
-    'articles?username=tectectec&order=latest'
-  );
-  const data = await result.articles;
-  console.log(data);
-
-  return {
-    props: {
-      articles: data,
-    },
-    revalidate: 60,
-  };
 };
