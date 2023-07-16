@@ -10,7 +10,7 @@ export const Documents = ({ zennPosts }: FeedProps) => {
           <p className='text-2xl tracking-widest'>Qiita</p>
           <ul>
             {zennPosts.map((post) => (
-              <p>{post.title}</p>
+              <li key={post.link}>{post.title}</li>
             ))}
           </ul>
         </div>
