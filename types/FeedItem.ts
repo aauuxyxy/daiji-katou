@@ -1,7 +1,12 @@
 export type Feed = {
   title: string;
   link: string;
-  isoDate: string;
+  creator: string;
+  published_at: string;
+  createdAt: string;
+  thumbnail?: string;
+  source: string;
+  contentSnippet: string;
 };
 
 export type FeedProps = {
