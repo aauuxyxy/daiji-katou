@@ -6,15 +6,15 @@ import { Fragment } from 'react';
 const Header = () => {
   const links = [
     { href: '#about', label: 'About' },
-    { href: '#documents', label: 'Documents' },
+    { href: '#feed', label: 'Feed' },
     { href: '#works', label: 'Works' },
     { href: '#contact', label: 'Contact' },
   ];
 
   return (
     <>
-      <div className='overflow-x-hidden'>
-        <nav>
+      <div className='phone:mb-52'>
+        <nav className='phone:mb-16'>
           <div className='py-10 w-3/4 mx-auto relative'>
             <span className='text-3xl font-body tracking-widest absolute left-0'>
               Daiji Katou
