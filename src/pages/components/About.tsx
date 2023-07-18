@@ -1,4 +1,10 @@
 import Image from 'next/image';
+import ContentsTitle from './ContentsTitle';
+import ContentsBody from './ContentsBody';
+import { FaGithub } from 'react-icons/fa';
+import { SiZenn } from 'react-icons/si';
+import { AiOutlineTwitter } from 'react-icons/ai';
+import Link from 'next/link';
 
 const About = () => {
   const aboutItems = [
@@ -27,11 +33,9 @@ const About = () => {
 
   return (
     <>
-      <div className='flex items-center justify-center laptop:mb-20 phone:mb-10'>
-        <p className='text-5xl tracking-widest'>About</p>
-      </div>
+      <ContentsTitle>About</ContentsTitle>
 
-      <div className='w-3/4 mx-auto font-body'>
+      <ContentsBody>
         <div className='phone:flex justify-center mb-4'>
           <Image
             src='/images/about/avatar.jpg'
@@ -43,11 +47,25 @@ const About = () => {
         </div>
 
         <div className='phone:text-sm'>
-          <p className='flex justify-center mb-20'>
+          <p className='flex justify-center mb-4'>
             <span>加藤 大二</span>
             <span className='mx-4'>－</span>
             <span>Daiji Katou</span>
           </p>
+
+          <div className='flex justify-center items-center mb-20'>
+            <Link href='https://github.com/aauuxyxy' target='_blank'>
+              <FaGithub className='mx-2 cursor-pointer' size='1.25rem' />
+            </Link>
+
+            <Link href='https://zenn.dev/tectectec' target='_blank'>
+              <SiZenn className='mx-2 cursor-pointer' size='1.25rem' />
+            </Link>
+
+            <Link href='https://twitter.com/dktec968' target='_blank'>
+              <AiOutlineTwitter className='mx-2 cursor-pointer' size='1.5rem' />
+            </Link>
+          </div>
 
           <div className='flex laptop:flex-row justify-between items-center phone:flex-col w-3/4 mx-auto'>
             {aboutItems.map((about) => (
@@ -70,12 +88,12 @@ const About = () => {
                   </svg>
                 </div>
                 <p className='text-center mb-6'>{about.value}</p>
-                <div className='h-36'>{about.description}</div>
+                <div className='h-28'>{about.description}</div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </ContentsBody>
     </>
   );
 };

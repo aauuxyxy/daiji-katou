@@ -1,12 +1,14 @@
 import Header from './components/Header';
 import About from './components/About';
 import Footer from './components/Footer';
-import Contact from './components/Contact';
-import Feeds from './components/Feeds';
+import Concept from './components/Concept';
+import Feed from './components/Feeds';
 import { GetStaticProps } from 'next';
 import Parser from 'rss-parser';
 import { FeedProps } from '../../types/FeedItem';
 import { Montserrat } from '@next/font/google';
+import ContentsWrapper from './components/ContentsWrapper';
+import Link from 'next/link';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -19,18 +21,41 @@ export default function Home({ zennPosts }: FeedProps) {
       <div className='phone:mb-20 desktop:mb-56'>
         <Header />
       </div>
-      <div id='about' className='bg-sky-100 dark:bg-zinc-900 py-20'>
+
+      <ContentsWrapper id='about' bg_type={false}>
         <About />
+      </ContentsWrapper>
+
+      <ContentsWrapper id='concept' bg_type={true}>
+        <Concept />
+      </ContentsWrapper>
+
+      <ContentsWrapper id='feed' bg_type={false}>
+        <Feed zennPosts={zennPosts} />
+      </ContentsWrapper>
+
+      <div className='bg-zinc-100 dark:bg-zinc-900 pt-1'>
+        <Footer />
       </div>
 
-      <div id='documents' className='py-20'>
-        <Feeds zennPosts={zennPosts} />
-      </div>
-
-      <div id='contact' className='py-20'>
-        <Contact />
-      </div>
-      <Footer />
+      <button className='fixed right-6 bottom-6 bg-gray-600 text-white rounded-full w-12 h-12'>
+        <Link href='/' className='flex justify-center'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            strokeWidth={1.5}
+            stroke='currentColor'
+            className='w-6 h-6'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='M4.5 15.75l7.5-7.5 7.5 7.5'
+            />
+          </svg>
+        </Link>
+      </button>
     </div>
   );
 }

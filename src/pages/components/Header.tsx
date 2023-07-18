@@ -6,9 +6,8 @@ import { Fragment } from 'react';
 const Header = () => {
   const links = [
     { href: '#about', label: 'About' },
+    { href: '#concept', label: 'Concept' },
     { href: '#feed', label: 'Feed' },
-    { href: '#works', label: 'Works' },
-    { href: '#contact', label: 'Contact' },
   ];
 
   return (
@@ -43,7 +42,7 @@ const Header = () => {
               <div>
                 <Menu as='div' className='relative inline-block text-left'>
                   <div>
-                    <Menu.Button className='inline-flex w-full justify-center bg-opacity-20 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'>
+                    <Menu.Button className='inline-flex w-full justify-center bg-opacity-20 text-sm font-medium text-black dark:text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'>
                       <span className='z-10 space-y-2'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
@@ -71,7 +70,7 @@ const Header = () => {
                     leaveFrom='transform opacity-100 scale-100'
                     leaveTo='transform opacity-0 scale-95'
                   >
-                    <Menu.Items className='absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                    <Menu.Items className='absolute right-0 mt-2 w-56 origin-top-right divide-y bg-gray-800 divide-gray-100 rounded-md dark:bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
                       <div className='px-1 py-1 '>
                         {links.map(({ href, label }) => (
                           <Menu.Item key={href}>
@@ -80,7 +79,7 @@ const Header = () => {
                                 className={`${
                                   active
                                     ? 'bg-violet-500 text-white'
-                                    : 'text-gray-900'
+                                    : 'text-white dark:text-black'
                                 } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                               >
                                 <a href={href}>{label}</a>
@@ -88,6 +87,9 @@ const Header = () => {
                             )}
                           </Menu.Item>
                         ))}
+                      </div>
+                      <div className='flex justify-center items-center py-4'>
+                        <ChangeThemes />
                       </div>
                     </Menu.Items>
                   </Transition>

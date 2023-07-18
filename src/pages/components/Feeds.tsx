@@ -1,20 +1,23 @@
 import { FeedProps } from '../../../types/FeedItem';
 import Link from 'next/link';
+import ContentsTitle from './ContentsTitle';
+import ContentsBody from './ContentsBody';
 
-const Feeds = ({ zennPosts }: FeedProps) => {
+const Feed = ({ zennPosts }: FeedProps) => {
   if (!zennPosts) {
     return <p>記事がありません。</p>;
   }
 
   return (
     <>
-      <div className='flex items-center justify-center laptop:mb-20 phone:mb-10'>
-        <p className='text-5xl tracking-widest'>Feeds</p>
-      </div>
+      <ContentsTitle>Feed</ContentsTitle>
 
-      <div className='w-3/4 mx-auto'>
-        <div className='mb-10'>
-          <div className='desktop:grid grid-cols-4'>
+      <ContentsBody>
+        <p className='text-center mb-10'>
+          当サイトを構成するフレームワーク「Next.js」に関する最新情報のFeedをチェックできます。
+        </p>
+        <div>
+          <div className='grid tablet:w-full phone:mx-auto phone:w-96 phone:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4'>
             {zennPosts.map((post) => (
               <div className='m-2' key={post.link}>
                 <Link
@@ -33,9 +36,9 @@ const Feeds = ({ zennPosts }: FeedProps) => {
             ))}
           </div>
         </div>
-      </div>
+      </ContentsBody>
     </>
   );
 };
 
-export default Feeds;
+export default Feed;
