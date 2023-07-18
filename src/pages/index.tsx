@@ -2,13 +2,15 @@ import Header from './components/Header';
 import About from './components/About';
 import Footer from './components/Footer';
 import Concept from './components/Concept';
-import Feed from './components/Feeds';
+import Feed from './components/Feed';
 import { GetStaticProps } from 'next';
 import Parser from 'rss-parser';
 import { FeedProps } from '../../types/FeedItem';
 import { Montserrat } from '@next/font/google';
 import ContentsWrapper from './components/ContentsWrapper';
-import Link from 'next/link';
+import { Link as Scroll } from 'react-scroll';
+import { BsFillRocketFill } from 'react-icons/bs';
+import { useState, useEffect } from 'react';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -16,8 +18,19 @@ const montserrat = Montserrat({
 });
 
 export default function Home({ zennPosts }: FeedProps) {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const toggleVisibility = () => {
+    window.scrollY > 600 ? setIsVisible(true) : setIsVisible(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
   return (
-    <div className={montserrat.className}>
+    <div id='top' className={montserrat.className}>
       <div className='phone:mb-20 desktop:mb-56'>
         <Header />
       </div>
@@ -38,23 +51,15 @@ export default function Home({ zennPosts }: FeedProps) {
         <Footer />
       </div>
 
-      <button className='fixed right-6 bottom-6 bg-gray-600 text-white rounded-full w-12 h-12'>
-        <Link href='/' className='flex justify-center'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth={1.5}
-            stroke='currentColor'
-            className='w-6 h-6'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M4.5 15.75l7.5-7.5 7.5 7.5'
-            />
-          </svg>
-        </Link>
+      <button
+        className={`${
+          isVisible ? 'animate-rocket-alive' : 'animate-rocket-go'
+        } fixed right-6 bottom-6 text-black dark:text-white`}
+      >
+        <Scroll to='top' smooth={true} duration={100}>
+          <BsFillRocketFill size='2.5rem' className='mb-2' />
+          <p>TOP</p>
+        </Scroll>
       </button>
     </div>
   );

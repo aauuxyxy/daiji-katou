@@ -35,7 +35,7 @@ const About = () => {
     <>
       <ContentsTitle>About</ContentsTitle>
 
-      <ContentsBody>
+      <ContentsBody animatetype='left'>
         <div className='phone:flex justify-center mb-4'>
           <Image
             src='/images/about/avatar.jpg'

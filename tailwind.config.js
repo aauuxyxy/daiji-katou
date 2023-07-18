@@ -28,6 +28,13 @@ module.exports = {
       animation: {
         'slide-in-fwd-center':
           'slide-in-fwd-center 5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both',
+        'slide-left':
+          'slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both',
+        'slide-right':
+          'slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both',
+        'rocket-init': 'rocket-init 1s ease-in-out both',
+        'rocket-alive': 'rocket-alive 0.5s ease-in-out both',
+        'rocket-go': 'rocket-go 0.5s ease-in-out both',
       },
       keyframes: {
         'slide-in-fwd-center': {
@@ -38,6 +45,52 @@ module.exports = {
           to: {
             transform: 'translateZ(0)',
             opacity: '1',
+          },
+        },
+        'slide-left': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-100px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        'slide-right': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(100px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        'rocket-init': {
+          '0%': {
+            transform: 'translateY(300px)',
+          },
+          to: {
+            transform: 'translateY(0)',
+          },
+        },
+        'rocket-go': {
+          '0%': {
+            transform: 'translateY(0)',
+            opacity: '1',
+          },
+          to: {
+            transform: 'translateY(-1000px)',
+            opacity: '0',
+          },
+        },
+        'rocket-alive': {
+          '0%': {
+            transform: 'translateY(100px)',
+          },
+          to: {
+            transform: 'translateY(0)',
           },
         },
       },

@@ -12,12 +12,12 @@ const Feed = ({ zennPosts }: FeedProps) => {
     <>
       <ContentsTitle>Feed</ContentsTitle>
 
-      <ContentsBody>
+      <ContentsBody animatetype='left'>
         <p className='text-center mb-10'>
           当サイトを構成するフレームワーク「Next.js」に関する最新情報のFeedをチェックできます。
         </p>
         <div>
-          <div className='grid tablet:w-full phone:mx-auto phone:w-96 phone:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4'>
+          <div className='grid tablet:w-full phone:mx-auto phone:w-80 phone:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4'>
             {zennPosts.map((post) => (
               <div className='m-2' key={post.link}>
                 <Link

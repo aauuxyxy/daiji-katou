@@ -7,7 +7,9 @@ const Concept = () => {
   return (
     <>
       <ContentsTitle>Concept</ContentsTitle>
-      <ContentsBody>
+
+      <div></div>
+      <ContentsBody animatetype='right'>
         <div className='flex justify-center my-20'>
           <Image
             src='/images/concept/space_journy.png'
@@ -21,8 +23,8 @@ const Concept = () => {
           <div className='mb-10'>
             <p className='text-xl mb-4'>Design</p>
             <div>
-              自らの経験や感じた事を「宇宙」と捉え、ポートフォリオのテーマとして落とし込みました。宇宙がテーマということで、全体のイメージカラーをモノトーンにしています。
-              また、宇宙飛行士のイラストをメインビジュアルとし、当サイトの中を旅するような体験をしてもらえるようにしています。
+              自らの経験や感じた事を「宇宙」と捉え、ポートフォリオのテーマとして落とし込みました。宇宙がテーマなので、あえてダークモードをデフォルトにすることでファーストインプレッションで宇宙というテーマを感じられるよう設計しています。
+              また、宇宙飛行士のイラストをメインビジュアルとすることで、当サイトの中を旅するような体験をしてもらえるよう工夫しています。
             </div>
           </div>
 
