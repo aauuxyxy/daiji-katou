@@ -1,38 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Daiji Katou
 
-## Getting Started
+自分の人生の経歴や経験を「宇宙」と捉えたポートフォリオサイトを作成しました。や当サイトは Next.js で構築していることから。Next.js のトレンド記事一覧を取得する RSS 機能も実装しております。
 
-First, run the development server:
+![top](https://github.com/aauuxyxy/daiji-katou/assets/48760596/76d1b82a-90b4-46c9-87b3-4b4b4014dfc4)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## URL
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+当サイトは Vercel にデプロイしてあります。以下の URL から閲覧できます。
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+https://daiji-katou.vercel.app/
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# 利用技術および主要なライブラリ
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- ### Next.js 13.4.9
+- ### React 18.2.0
+- ### Tailwind CSS 3.3.2
+- ### rss-parser 3.13.0
+  取得した RSS フィードを JSON に変換するライブラリ
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# 画面構成
 
-## Learn More
+当サイトは以下のコンテンツで構成されています。
+|コンテンツ|詳細|
+----|----
+|About|私の経歴や各種 SNS や GitHub アカウント記載|
+|Concept|当サイトのコンセプトを記載|
+|Feed|Next.js に関する記事の RSS フィード一覧|
 
-To learn more about Next.js, take a look at the following resources:
+### About
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+上部に私の名前と GitHub/Zenn/Twitter のアカウントリンクを記載してあります。下部には現在勤務している会社や担当業務などを記載してあります。
+上部の SNS アカウント風な作りにや、下部のブロック分けされたデザインにより親しみやすさや読みやすさを意識しています。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![about](https://github.com/aauuxyxy/daiji-katou/assets/48760596/16176857-5cea-43a2-b4da-1d96599b3a7c)
 
-## Deploy on Vercel
+### Concept
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+当サイトのコンセプトを記載してあります。デザイン的な側面と技術的な側面からコンセプトを知ることができます。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![concept](https://github.com/aauuxyxy/daiji-katou/assets/48760596/5879ffcb-1a8f-4c70-ba39-357b4c507922)
+
+### Feed
+
+Next.js に関するトレンドの記事の一覧を取得しております。rss-perser により、Zenn の Next.js のトレンドトピックスから取得した RSS フィードを JSON に変換し、記事の一覧にしています。
+また記事の描画方法は SSG(Static Site Generation)を用いることで高速な読み込みを意識しています。
+
+![feed](https://github.com/aauuxyxy/daiji-katou/assets/48760596/669d9d91-eb95-462b-aa0f-2369b1468d24)
+
+# Author
+
+aauuxyxy - [GitHub](https://github.com/aauuxyxy)
+
+dk@個人開発してみたい - [Zenn](https://zenn.dev/)
+
+dk@個人開発してみたい - [Twitter](https://twitter.com/dktec968)
