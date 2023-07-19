@@ -12,7 +12,7 @@ const Feed = ({ zennPosts }: FeedProps) => {
     <>
       <ContentsTitle>Feed</ContentsTitle>
 
-      <ContentsBody animatetype='left'>
+      <ContentsBody animatetype='right'>
         <p className='text-center mb-10'>
           当サイトを構成するフレームワーク「Next.js」に関する最新情報のFeedをチェックできます。
         </p>

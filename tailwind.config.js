@@ -27,11 +27,13 @@ module.exports = {
       },
       animation: {
         'slide-in-fwd-center':
-          'slide-in-fwd-center 5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both',
+          'slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both',
         'slide-left':
           'slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both',
         'slide-right':
           'slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both',
+        'slide-under':
+          'slide-under 1s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both',
         'rocket-init': 'rocket-init 1s ease-in-out both',
         'rocket-alive': 'rocket-alive 0.5s ease-in-out both',
         'rocket-go': 'rocket-go 0.5s ease-in-out both',
@@ -61,6 +63,16 @@ module.exports = {
           '0%': {
             opacity: '0',
             transform: 'translateX(100px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        'slide-under': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(100px)',
           },
           to: {
             opacity: '1',

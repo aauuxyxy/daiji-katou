@@ -9,7 +9,7 @@ const Concept = () => {
       <ContentsTitle>Concept</ContentsTitle>
 
       <div></div>
-      <ContentsBody animatetype='right'>
+      <ContentsBody animatetype='under'>
         <div className='flex justify-center my-20'>
           <Image
             src='/images/concept/space_journy.png'
@@ -32,7 +32,7 @@ const Concept = () => {
             <p className='text-xl mb-4'>Code</p>
             <div>
               このポートフォリオサイトはNext.jsによって構築されています。Next.jsの0コンフィグな設計により環境構築への配慮が通常のReactよりも大幅に軽減されていることや、SSR・SSG・ISRなどの機能を備えていることから、ユーザー体験やパフォーマンスの向上にも貢献してくれると考えNext.jsを採用しています。
-              また、当サイトではFeedsセクションにて、ZennのRSSフィードを取得し、Next.jsのSSG機能を用いて記事を表示しています。
+              また、当サイトではFeedセクションにて、ZennのRSSフィードを取得し、Next.jsのSSG機能を用いて記事を表示しています。
             </div>
           </div>
 

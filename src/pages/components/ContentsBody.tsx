@@ -15,7 +15,7 @@ const ContentsBody = (props: Props) => {
 
   return (
     <>
-      {props.animatetype === 'left' ? (
+      {props.animatetype === 'left' && (
         <div
           ref={ref}
           className={`${
@@ -24,11 +24,24 @@ const ContentsBody = (props: Props) => {
         >
           {props.children}
         </div>
-      ) : (
+      )}
+
+      {props.animatetype === 'right' && (
         <div
           ref={ref}
           className={`${
             inView ? 'animate-slide-right' : ''
+          } opacity-0 laptop:w-3/4 phone:w-11/12 mx-auto font-body`}
+        >
+          {props.children}
+        </div>
+      )}
+
+      {props.animatetype === 'under' && (
+        <div
+          ref={ref}
+          className={`${
+            inView ? 'animate-slide-under' : ''
           } opacity-0 laptop:w-3/4 phone:w-11/12 mx-auto font-body`}
         >
           {props.children}
