@@ -2,7 +2,7 @@
 
 自分の人生の経歴や経験を「宇宙」と捉えたポートフォリオサイトを作成しました。や当サイトは Next.js で構築していることから。Next.js のトレンド記事一覧を取得する RSS 機能も実装しております。
 
-![top](https://github.com/aauuxyxy/daiji-katou/assets/48760596/76d1b82a-90b4-46c9-87b3-4b4b4014dfc4)
+![top](https://github.com/aauuxyxy/daiji-katou/assets/48760596/57b5aecb-2486-414f-88ee-720fb18f380c)
 
 ## URL
 
