@@ -3,7 +3,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Concept from './components/Concept';
 import Feed from './components/Feed';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import Parser from 'rss-parser';
 import { FeedProps } from '../../types/FeedItem';
 import { Montserrat } from '@next/font/google';
@@ -65,7 +65,7 @@ export default function Home({ zennPosts }: FeedProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const parser = new Parser();
 
   const feedZenn = await parser.parseURL('https://zenn.dev/topics/nextjs/feed');
